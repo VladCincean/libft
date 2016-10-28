@@ -1,30 +1,32 @@
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <string.h>
 
 /*
  ** Part I
  */
 
-// memset
-// bzero
-// memcpy
-// memccpy
-// memmove
-// memchr
-// memcmp
-// strlen
-// strdup
-// strcpy
-// strncpy
-// strcat
-// strncat
+void	*ft_memset(void *s, int c, size_t n); // tbd
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n); // tbd
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n); // tbd
+void	*ft_memmove(void *dest, const void *src, size_t n); // tbd
+void	*ft_memchr(const void *s, int c, size_t n); // tbd
+int		ft_memcmp(const void *s1, const void *s2, size_t n)l // tbd
+size_t	ft_strlen(const char *s);
+char	*ft_strdup(const char *s);
+char	*ft_strcpy(char *dest, const char *src);
+char	*ft_strncpy(char *dest, const char *src, size_t n);
+char	*ft_strcat(char *dest, const char *src); // tbd
+char	*ft_strncat(char *dest, cosnt char *src, size_t n); // tbd
 // strlcat
-// strchr
-// strrchr
-// strstr
+char	*ft_strchr(const char *s, int c); // tbd
+char	*ft_strrchr(const char *s, int c); // tbd
+char	*ft_strstr(const char *haystack, const char *needle); // tbd
 // strnstr
-// strcmp
-// atoi
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_atoi(const char *nptr);
 // isaplha
 // isdigit
 // isalnum
@@ -77,7 +79,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size); // tbd
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t)); // tbd
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t)); // tbd
 void	ft_lstadd(t_list **alst, t_list *new); // tbd
-void	ft_lstiter(t_list *lst, void (*f)(t_lsit *elem)); // tbd
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem)); // tbd
 t_list	*ft_lstmsp(t_list *lst, t_list * (*f)(t_list *elem)); // tbd
 
 /*
