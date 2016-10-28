@@ -2,8 +2,8 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	len;
-	int	i;
+	size_t	len;
+	size_t	i;
 
 	i = 0;
 	while (s[i++])
