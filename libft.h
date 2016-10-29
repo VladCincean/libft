@@ -6,13 +6,13 @@
  ** Part I
  */
 
-void	*ft_memset(void *s, int c, size_t n); // tbd
+void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n); // tbd
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n); // tbd
-void	*ft_memmove(void *dest, const void *src, size_t n); // tbd
-void	*ft_memchr(const void *s, int c, size_t n); // tbd
-int		ft_memcmp(const void *s1, const void *s2, size_t n); // tbd
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
 char	*ft_strcpy(char *dest, const char *src);
@@ -90,5 +90,5 @@ int	ft_islower(int c);
 int	ft_isupper(int c);
 int	ft_isblank(int c);
 int	ft_isspace(int c);
-int	ft_isxdigit(int c); // tbd
+int	ft_isxdigit(int c);
 #endif
