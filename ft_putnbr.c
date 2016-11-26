@@ -7,7 +7,7 @@ void	ft_putnbr(int n)
 		ft_putstr("-2147483648");
 		return ;
 	}
-	if (nb < 0)
+	if (n < 0)
 	{
 		ft_putchar('-');
 		n *= -1;
