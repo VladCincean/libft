@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n); //double-check this
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
-// strnstr
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n); // ...
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *nptr);
@@ -91,7 +91,6 @@ int		ft_isupper(int c);
 int		ft_isblank(int c);
 int		ft_isspace(int c);
 int		ft_isxdigit(int c);
-
 
 void	*ft_memdup(const void *src, size_t n);
 
