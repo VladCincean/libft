@@ -70,7 +70,7 @@ static char	*kmp_matcher(const char *text, const char *pattern, size_t n)
 	return (NULL);
 }
 
-char		*ft_strstr(const char *haystack, const char *needle, size_t n)
+char		*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	if (*needle == '\0')
 		return ((char*)haystack);

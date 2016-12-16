@@ -19,10 +19,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		temp[i] = char_src[i];
 		i++;
 	}
-	while (i >= 0)
+	i = 0;
+	while (i < n)
 	{
 		char_dest[i] = temp[i];
-		i--;
+		i++;
 	}
 	free(temp);
 	return (dest);

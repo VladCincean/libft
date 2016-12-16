@@ -12,9 +12,9 @@ static char*	get_first_not_white(char const *s)
 
 static char*	get_last_not_white(char const *s)
 {
-	size_t	i;
+	int	i;
 
-	i = ft_strlen(s) - 1;
+	i = (int)(ft_strlen(s)) - 1;
 	while (i >= 0 && (s[i] == ' ' || s[i] == '\t' || s[i] == '\n'))
 		i--;
 	if (i == -1)
