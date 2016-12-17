@@ -2,7 +2,5 @@
 
 int	ft_islower(int c)
 {
-	if ('a' <= c && c <= 'z')
-		return (c);
-	return (0);
+	return ('a' <= c && c <= 'z');
 }
