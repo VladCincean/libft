@@ -95,4 +95,26 @@ int		ft_isxdigit(int c); // --
 void	*ft_memdup(const void *src, size_t n);
 
 char	*ft_itoa_base(int n, int base);
+
+/*
+ **	Binary search tree
+ */
+
+typedef struct	s_btree
+{
+	void			*content;
+	size_t			content_size;
+	struct s_btree	*left;
+	struct s_btree	*right;
+	size_t			height;
+}				t_btree;
+
+t_btree	*ft_btree_new(void const *content, size_t content_size);
+void	ft_btree_preorder(t_btree *root, void (*f)(void *, size_t));
+void	ft_btree_inorder(t_btree *root, void (*f)(void *, size_t));
+void	ft_btree_postorder(t_btree *root, void (*f)(void *, size_t));
+void	ft_btree_insert(t_btree **root, void *content, size_t content_size,
+			int (*cmpf)(void *, size_t, void *, size_t));
+void	*ft_btree_search(t_btree *root, void *content, size_t content_size,
+			int (*cmpf)(void *, size_t, void *, size_t));
 #endif

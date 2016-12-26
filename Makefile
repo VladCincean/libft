@@ -66,7 +66,13 @@ SRC = ft_atoi.c \
 	ft_strsub.c \
 	ft_strtrim.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
+	ft_btree_inorder.c \
+	ft_btree_insert.c \
+	ft_btree_new.c \
+	ft_btree_postorder.c \
+	ft_btree_preorder.c \
+	ft_btree_search.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
