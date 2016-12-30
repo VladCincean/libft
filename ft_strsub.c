@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vcincean <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/27 14:06:00 by vcincean          #+#    #+#             */
+/*   Updated: 2016/12/27 14:15:52 by vcincean         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*
- ** We use ft_strnew() instead of malloc() in order to initializate
- ** all the chars in the array to '\0'.
- */
+** We use ft_strnew() instead of malloc() in order to initializate
+** all the chars in the array to '\0'.
+*/
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {

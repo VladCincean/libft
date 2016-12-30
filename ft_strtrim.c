@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vcincean <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/27 14:06:07 by vcincean          #+#    #+#             */
+/*   Updated: 2016/12/29 15:00:00 by vcincean         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char*	get_first_not_white(char const *s)
+static char		*get_first_not_white(char const *s)
 {
 	size_t	i;
 
@@ -10,7 +22,7 @@ static char*	get_first_not_white(char const *s)
 	return ((char *)&s[i]);
 }
 
-static char*	get_last_not_white(char const *s)
+static char		*get_last_not_white(char const *s)
 {
 	int	i;
 
@@ -34,9 +46,16 @@ char			*ft_strtrim(char const *s)
 	first_not_white = get_first_not_white(s);
 	last_not_white = get_last_not_white(s);
 	if (first_not_white > last_not_white)
-		return (ft_strnew(0));
+	{
+		ret = ft_strnew(0);
+		if (!ret)
+			return (NULL);
+		return (ret);
+	}
 	len = last_not_white - first_not_white + 1;
 	ret = ft_strnew(len);
+	if (!ret)
+		return (NULL);
 	ret = ft_strncpy(ret, first_not_white, len);
 	return (ret);
 }

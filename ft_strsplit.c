@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vcincean <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/27 14:05:54 by vcincean          #+#    #+#             */
+/*   Updated: 2016/12/28 17:00:43 by vcincean         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
-
-#include <stdio.h> // TODO: delete this
 
 static size_t	get_nr_of_words(char const *s, char c)
 {
@@ -55,10 +65,10 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	i;
 	size_t	nr_words;
 	char	**ret;
-//	char	*s1;
 
+	if (!s)
+		return (NULL);
 	nr_words = get_nr_of_words(s, c);
-//	printf("nr words = %lu\n", nr_words);
 	ret = (char **)ft_memalloc(sizeof(char *) * (nr_words + 1));
 	if (!ret)
 		return (NULL);
@@ -72,12 +82,8 @@ char			**ft_strsplit(char const *s, char c)
 			clean_up(ret, i);
 			return (NULL);
 		}
-//		printf("-- i = %lu\n", i);
-//		printf("%s\n", ret[i - 1]);
 		s += wordlen(s, c);
 	}
-//	printf("i = %lu\n", i);
 	ret[nr_words] = 0;
-//	ret[nr_words] = ft_strnew(0);
 	return (ret);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_btree_new.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vcincean <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/27 14:01:52 by vcincean          #+#    #+#             */
+/*   Updated: 2016/12/27 14:16:08 by vcincean         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -5,7 +17,7 @@ t_btree	*ft_btree_new(void const *content, size_t content_size)
 {
 	t_btree	*ret;
 
-	if(!(ret = (t_btree *)malloc(sizeof(t_btree))))
+	if (!(ret = (t_btree *)malloc(sizeof(t_btree))))
 		return (NULL);
 	if (!content)
 	{

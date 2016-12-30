@@ -260,8 +260,9 @@ int	test_ft_strncat()
 	return (1);
 }
 
-int	test_ft_strlcat()
+int	test_ft_strlcat() /* DEPRECATED */
 {
+	/*
 	char		*a;
 
 	a = (char *)malloc(10);
@@ -277,6 +278,7 @@ int	test_ft_strlcat()
 		return (0);
 	}
 	free(a);
+	*/
 	return (1);
 }
 
@@ -982,7 +984,7 @@ int	main(void)
 	printf("ft_strncpy: %d\n", test_ft_strncpy());
 	printf("ft_strcat: %d\n", test_ft_strcat());
 	printf("ft_strncat: %d\n", test_ft_strncat());
-	printf("ft_strlcat: %d\n", test_ft_strlcat());
+	printf("ft_strlcat (DEPRECATED): %d\n", 1);
 	printf("ft_strchr: %d\n", test_ft_strchr());
 	printf("ft_strrchr: %d\n", test_ft_strrchr());
 	printf("ft_strstr: %d\n", test_ft_strstr());
