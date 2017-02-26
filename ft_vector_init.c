@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_vector_init.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcincean <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/27 14:06:00 by vcincean          #+#    #+#             */
-/*   Updated: 2017/02/15 17:29:24 by vcincean         ###   ########.fr       */
+/*   Created: 2017/02/22 14:53:10 by vcincean          #+#    #+#             */
+/*   Updated: 2017/02/23 11:30:38 by vcincean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-/*
-** We use ft_strnew() instead of malloc() in order to initializate
-** all the chars in the array to '\0'.
-*/
-
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+t_vector	*ft_vector_init(int capacity)
 {
-	char	*ret;
+	t_vector	*v;
 
-	if (!s)
+	if ((v = (t_vector *)malloc(sizeof(t_vector))) == NULL)
 		return (NULL);
-	ret = ft_strnew(len);
-	if (!ret)
+	if ((v->v = (void **)malloc(capacity * sizeof(void *))) == NULL)
+	{
+		free(v);
 		return (NULL);
-	ret = ft_strncpy(ret, s + start, len);
-	return (ret);
+	}
+	v->size = 0;
+	v->capacity = capacity;
+	return (v);
 }

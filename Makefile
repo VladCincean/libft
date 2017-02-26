@@ -6,7 +6,7 @@
 #    By: vcincean <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/27 14:00:16 by vcincean          #+#    #+#              #
-#    Updated: 2016/12/27 14:00:21 by vcincean         ###   ########.fr        #
+#    Updated: 2017/02/23 11:13:38 by vcincean         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,12 @@ SRC = ft_atoi.c \
 	ft_btree_new.c \
 	ft_btree_postorder.c \
 	ft_btree_preorder.c \
-	ft_btree_search.c
+	ft_btree_search.c \
+	ft_vector_init.c \
+	ft_vector_destroy.c \
+	ft_vector_push_back.c \
+	ft_vector_delete.c
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

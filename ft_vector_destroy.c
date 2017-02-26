@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_vector_destroy.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcincean <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/27 14:06:00 by vcincean          #+#    #+#             */
-/*   Updated: 2017/02/15 17:29:24 by vcincean         ###   ########.fr       */
+/*   Created: 2017/02/22 14:57:00 by vcincean          #+#    #+#             */
+/*   Updated: 2017/02/23 11:48:06 by vcincean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-/*
-** We use ft_strnew() instead of malloc() in order to initializate
-** all the chars in the array to '\0'.
-*/
-
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	ft_vector_destroy(t_vector **v)
 {
-	char	*ret;
-
-	if (!s)
-		return (NULL);
-	ret = ft_strnew(len);
-	if (!ret)
-		return (NULL);
-	ret = ft_strncpy(ret, s + start, len);
-	return (ret);
+	if (v == NULL || *v == NULL)
+		return ;
+	if ((*v)->v != NULL)
+	{
+		free((*v)->v);
+		(*v)->v = NULL;
+	}
+	ft_memdel((void **)v);
 }

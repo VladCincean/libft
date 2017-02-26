@@ -6,7 +6,7 @@
 /*   By: vcincean <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 14:05:49 by vcincean          #+#    #+#             */
-/*   Updated: 2016/12/29 15:38:59 by vcincean         ###   ########.fr       */
+/*   Updated: 2017/02/23 11:10:43 by vcincean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,11 @@ static char	*kmp_matcher(const char *text, const char *pattern, size_t n)
 	return (NULL);
 }
 
-char		*ft_strnstr(const char *haystack, const char *needle, size_t n)
+char		*ft_strnstr(const char *text, const char *pattern, size_t n)
 {
-	if (*needle == '\0')
-		return ((char*)haystack);
-	return (kmp_matcher(haystack, needle, n));
+	if (*pattern == '\0')
+		return ((char*)text);
+	if (ft_strlen(text) < n)
+		n = ft_strlen(text);
+	return (kmp_matcher(text, pattern, n));
 }

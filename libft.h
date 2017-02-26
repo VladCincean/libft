@@ -6,7 +6,7 @@
 /*   By: vcincean <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 14:06:38 by vcincean          #+#    #+#             */
-/*   Updated: 2016/12/29 15:23:34 by vcincean         ###   ########.fr       */
+/*   Updated: 2017/02/23 12:05:57 by vcincean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ char			*ft_strncat(char *dest, const char *src, size_t n);
 size_t			ft_strlcat(char *dest, const char *src, size_t n);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
-char			*ft_strstr(const char *haystack, const char *needle);
-char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
+char			*ft_strstr(const char *text, const char *pattern);
+char			*ft_strnstr(const char *text, const char *pattern, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *nptr);
@@ -127,4 +127,24 @@ void			ft_btree_insert(t_btree **root, void *content,
 		size_t content_size, int (*cmpf)(void *, size_t, void *, size_t));
 void			*ft_btree_search(t_btree *root, void *content,
 		size_t content_size, int (*cmpf)(void *, size_t, void *, size_t));
+
+/*
+**	Dynamic Vector
+**	--------------
+**	Right now, the vector stores pointers to data; it does not copy data;
+**		when destroyed, it does not deallocate memory for data
+*/
+
+typedef struct	s_vector
+{
+	void	**v;
+	size_t	size;
+	size_t	capacity;
+}				t_vector;
+
+t_vector		*ft_vector_init(int capacity);
+void			ft_vector_destroy(t_vector **v);
+int				ft_vector_push_back(t_vector *v, void *e);
+int				ft_vector_delete(t_vector *v, int index);
+
 #endif
