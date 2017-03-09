@@ -6,7 +6,7 @@
 #    By: vcincean <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/27 14:00:16 by vcincean          #+#    #+#              #
-#    Updated: 2017/02/23 11:13:38 by vcincean         ###   ########.fr        #
+#    Updated: 2017/02/27 13:27:52 by vcincean         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,11 @@ SRC = ft_atoi.c \
 	ft_vector_init.c \
 	ft_vector_destroy.c \
 	ft_vector_push_back.c \
-	ft_vector_delete.c
+	ft_vector_delete.c \
+	get_next_line.c \
+	matrix.c \
+	vector_2d.c \
+	vector_3d.c
 
 OBJ = $(SRC:.c=.o)
 

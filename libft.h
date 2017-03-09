@@ -6,7 +6,7 @@
 /*   By: vcincean <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 14:06:38 by vcincean          #+#    #+#             */
-/*   Updated: 2017/02/23 12:05:57 by vcincean         ###   ########.fr       */
+/*   Updated: 2017/02/27 13:26:08 by vcincean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,5 +146,69 @@ t_vector		*ft_vector_init(int capacity);
 void			ft_vector_destroy(t_vector **v);
 int				ft_vector_push_back(t_vector *v, void *e);
 int				ft_vector_delete(t_vector *v, int index);
+
+/*
+**	get_next_line
+**	-------------
+*/
+
+# define BUFF_SIZE 32
+
+typedef struct	s_file_pool
+{
+	int		fd;
+	char	*text;
+}				t_file_pool;
+
+int				get_next_line(int const fd, char **line);
+
+/*
+**	Structures for describing vectors of various dimensions (2, 3 and 4)
+*/
+
+typedef struct	s_2d_vector
+{
+	double	x;
+	double	y;
+}				t_2d_vector;
+
+t_2d_vector		ft_2d_translate(t_2d_vector v, double tx, double ty);
+t_2d_vector		ft_2d_rotate(t_2d_vector v, double theta);
+t_2d_vector		ft_2d_scale(t_2d_vector v, double sx, double sy);
+
+typedef struct	s_3d_vector
+{
+	double	x;
+	double	y;
+	double	z;
+}				t_3d_vector;
+
+t_3d_vector		ft_3d_translate(t_3d_vector v, double tx, double ty, double tz);
+t_3d_vector		ft_3d_rotate_x(t_3d_vector v, double theta);
+t_3d_vector		ft_3d_rotate_y(t_3d_vector v, double theta);
+t_3d_vector		ft_3d_rotate_z(t_3d_vector v, double theta);
+t_3d_vector		ft_3d_scale(t_3d_vector v, double sx, double sy, double sz);
+
+typedef struct	s_4d_vector
+{
+	double	x;
+	double	y;
+	double	z;
+	double	t;
+}				t_4d_vector;
+
+/*
+**	Matrix [... maybe use built-in matrices...]
+*/
+
+typedef struct	s_matrix
+{
+	double	**m;
+	int		rows;
+	int		cols;
+}				t_matrix;
+
+t_matrix		*matrix_create(int rows, int cols);
+void			matrix_destroy(t_matrix *mat);
 
 #endif
